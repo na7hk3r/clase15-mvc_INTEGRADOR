@@ -22,8 +22,8 @@ public class OdontologoController {
     public String buscarOdontologoPorId(Model model, @RequestParam("id") Integer id){
 
         Odontologo odontologo= odontologoService.buscarPorId(id);
-        model.addAttribute("nombre",odontologo.getNombre());
-        model.addAttribute("apellido",odontologo.getApellido());
+        model.addAttribute("matricula",odontologo.getNroMatricula());
+        model.addAttribute("apellidoOdontologo", odontologo.getApellido());
         return "index";
 
     }

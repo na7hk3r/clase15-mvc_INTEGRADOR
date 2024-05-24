@@ -60,3 +60,55 @@ INSERT INTO ODONTOLOGOS (MATRICULA, NOMBRE, APELLIDO) VALUES ('12345','Rene','El
 [2024-05-23 22:40:25] [ INFO ] [PacienteDAOH2:110] iniciando la busqueda por email: jorge.pereyra@digitalhouse.com
 [2024-05-23 22:40:25] [ INFO ] [DomicilioDAOH2:44] iniciando la busqueda de un domicilio con id: 1
 [2024-05-23 22:40:32] [ INFO ] [OdontologoDaoH2:83] iniciando la operacion de buscado de un odontologo con id : 1
+[2024-05-23 22:58:06] [ INFO ] [BD:35] tabla creada con exito
+[2024-05-23 22:58:14] [ INFO ] [PacienteDAOH2:110] iniciando la busqueda por email: jorge.pereyra@digitalhouse.com
+[2024-05-23 22:58:14] [ INFO ] [DomicilioDAOH2:44] iniciando la busqueda de un domicilio con id: 1
+[2024-05-23 22:59:23] [ INFO ] [OdontologoDaoH2:83] iniciando la operacion de buscado de un odontologo con id : 1
+[2024-05-23 23:12:50] [ INFO ] [BD:35] tabla creada con exito
+[2024-05-23 23:16:06] [ INFO ] [OdontologoDaoH2:83] iniciando la operacion de buscado de un odontologo con id : 1
+[2024-05-23 23:16:07] [ INFO ] [OdontologoDaoH2:83] iniciando la operacion de buscado de un odontologo con id : 1
+[2024-05-23 23:16:16] [ INFO ] [PacienteDAOH2:110] iniciando la busqueda por email: jorge.pereyra@digitalhouse.com
+[2024-05-23 23:16:16] [ INFO ] [DomicilioDAOH2:44] iniciando la busqueda de un domicilio con id: 1
+[2024-05-23 23:16:24] [ INFO ] [PacienteDAOH2:110] iniciando la busqueda por email: jorge.pereyra@digitalhouse.com
+[2024-05-23 23:16:24] [ INFO ] [DomicilioDAOH2:44] iniciando la busqueda de un domicilio con id: 1
+[2024-05-23 23:16:36] [ INFO ] [PacienteDAOH2:110] iniciando la busqueda por email: jorge.pereyra@digitalhouse.com?odontologo=1
+[2024-05-23 23:19:53] [ INFO ] [PacienteDAOH2:110] iniciando la busqueda por email: jorge.pereyra@digitalhouse.com
+[2024-05-23 23:19:53] [ INFO ] [DomicilioDAOH2:44] iniciando la busqueda de un domicilio con id: 1
+[2024-05-23 23:20:04] [ INFO ] [PacienteDAOH2:110] iniciando la busqueda por email: jorge.pereyra@digitalhouse.com
+[2024-05-23 23:20:04] [ INFO ] [DomicilioDAOH2:44] iniciando la busqueda de un domicilio con id: 1
+[2024-05-23 23:20:09] [ INFO ] [PacienteDAOH2:110] iniciando la busqueda por email: jorge.pereyra@digitalhouse.com
+[2024-05-23 23:20:09] [ INFO ] [DomicilioDAOH2:44] iniciando la busqueda de un domicilio con id: 1
+[2024-05-23 23:20:16] [ INFO ] [PacienteDAOH2:110] iniciando la busqueda por email: jorge.pereyra@digitalhouse.com
+[2024-05-23 23:20:16] [ INFO ] [DomicilioDAOH2:44] iniciando la busqueda de un domicilio con id: 1
+[2024-05-23 23:22:11] [ INFO ] [BD:35] tabla creada con exito
+[2024-05-23 23:22:15] [ INFO ] [BD:35] tabla creada con exito
+[2024-05-23 23:22:16] [ INFO ] [PacienteDAOH2:110] iniciando la busqueda por email: jorge.pereyra@digitalhouse.com
+[2024-05-23 23:22:16] [ INFO ] [DomicilioDAOH2:44] iniciando la busqueda de un domicilio con id: 1
+[2024-05-23 23:22:29] [ INFO ] [OdontologoDaoH2:83] iniciando la operacion de buscado de un odontologo con id : 1
+[2024-05-23 23:31:34] [ INFO ] [OdontologoDaoH2:83] iniciando la operacion de buscado de un odontologo con id : 1
+[2024-05-23 23:31:35] [ INFO ] [OdontologoDaoH2:83] iniciando la operacion de buscado de un odontologo con id : 1
+[2024-05-23 23:31:46] [ INFO ] [BD:35] tabla creada con exito
+[2024-05-23 23:31:52] [ INFO ] [PacienteDAOH2:110] iniciando la busqueda por email: jorge.pereyra@digitalhouse.com
+[2024-05-23 23:31:52] [ INFO ] [DomicilioDAOH2:44] iniciando la busqueda de un domicilio con id: 1
+[2024-05-23 23:33:06] [ INFO ] [BD:35] tabla creada con exito
+[2024-05-23 23:33:22] [ INFO ] [PacienteDAOH2:110] iniciando la busqueda por email: jorge.pereyra@digitalhouse.com
+[2024-05-23 23:33:22] [ INFO ] [DomicilioDAOH2:44] iniciando la busqueda de un domicilio con id: 1
+[2024-05-23 23:33:29] [ INFO ] [PacienteDAOH2:110] iniciando la busqueda por email: german@german.com
+[2024-05-23 23:33:29] [ INFO ] [DomicilioDAOH2:44] iniciando la busqueda de un domicilio con id: 2
+[2024-05-23 23:34:15] [ INFO ] [BD:35] tabla creada con exito
+[2024-05-23 23:34:27] [ INFO ] [PacienteDAOH2:110] iniciando la busqueda por email: german@german.com
+[2024-05-23 23:34:27] [ INFO ] [DomicilioDAOH2:44] iniciando la busqueda de un domicilio con id: 2
+[2024-05-23 23:34:30] [ INFO ] [PacienteDAOH2:110] iniciando la busqueda por email: german@german.com
+[2024-05-23 23:34:30] [ INFO ] [DomicilioDAOH2:44] iniciando la busqueda de un domicilio con id: 2
+[2024-05-23 23:35:56] [ INFO ] [BD:35] tabla creada con exito
+[2024-05-23 23:36:09] [ INFO ] [OdontologoDaoH2:83] iniciando la operacion de buscado de un odontologo con id : 1
+[2024-05-23 23:36:45] [ INFO ] [PacienteDAOH2:110] iniciando la busqueda por email: jorge.pereyra@digitalhouse.com
+[2024-05-23 23:36:45] [ INFO ] [DomicilioDAOH2:44] iniciando la busqueda de un domicilio con id: 1
+[2024-05-23 23:36:53] [ INFO ] [PacienteDAOH2:110] iniciando la busqueda por email: jorge.pereyra@digitalhouse.com
+[2024-05-23 23:36:53] [ INFO ] [DomicilioDAOH2:44] iniciando la busqueda de un domicilio con id: 1
+[2024-05-23 23:37:03] [ INFO ] [PacienteDAOH2:110] iniciando la busqueda por email: jorge.pereyra@digitalhouse.com
+[2024-05-23 23:37:03] [ INFO ] [DomicilioDAOH2:44] iniciando la busqueda de un domicilio con id: 1
+[2024-05-23 23:37:08] [ INFO ] [PacienteDAOH2:110] iniciando la busqueda por email: jorge.pereyra@digitalhouse.com?odontologo?id=1
+[2024-05-23 23:37:28] [ INFO ] [PacienteDAOH2:110] iniciando la busqueda por email: jorge.pereyra@digitalhouse.com
+[2024-05-23 23:37:28] [ INFO ] [DomicilioDAOH2:44] iniciando la busqueda de un domicilio con id: 1
+[2024-05-23 23:37:41] [ INFO ] [OdontologoDaoH2:83] iniciando la operacion de buscado de un odontologo con id : 1
