@@ -56,3 +56,7 @@ INSERT INTO ODONTOLOGOS (MATRICULA, NOMBRE, APELLIDO) VALUES ('12345','Rene','El
 [2024-05-23 22:33:28] [ INFO ] [OdontologoDaoH2:83] iniciando la operacion de buscado de un odontologo con id : 1
 [2024-05-23 22:33:34] [ INFO ] [PacienteDAOH2:110] iniciando la busqueda por email: jorge.pereyra@digitalhouse.com
 [2024-05-23 22:33:34] [ INFO ] [DomicilioDAOH2:44] iniciando la busqueda de un domicilio con id: 1
+[2024-05-23 22:40:01] [ INFO ] [BD:35] tabla creada con exito
+[2024-05-23 22:40:25] [ INFO ] [PacienteDAOH2:110] iniciando la busqueda por email: jorge.pereyra@digitalhouse.com
+[2024-05-23 22:40:25] [ INFO ] [DomicilioDAOH2:44] iniciando la busqueda de un domicilio con id: 1
+[2024-05-23 22:40:32] [ INFO ] [OdontologoDaoH2:83] iniciando la operacion de buscado de un odontologo con id : 1

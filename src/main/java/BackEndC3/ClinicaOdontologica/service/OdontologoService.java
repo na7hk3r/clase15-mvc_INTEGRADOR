@@ -23,9 +23,9 @@ public class OdontologoService {
         return odontologoiDao;
     }
 
-    public void setOdontologoIDao(iDao<Odontologo> odontologoiDao) {
-        this.odontologoiDao = odontologoiDao;
-    }
+//    public void setOdontologoIDao(iDao<Odontologo> odontologoiDao) {
+//        this.odontologoiDao = odontologoiDao;
+//    }
 
     public Odontologo guardar(Odontologo odontologo){
         //delegarle la responsabilidad de guardar al DAO
