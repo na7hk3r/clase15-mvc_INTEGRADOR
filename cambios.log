@@ -1,0 +1,58 @@
+[2024-05-23 19:51:30] [ INFO ] [BD:29] tabla creada con exito
+[2024-05-23 19:51:30] [ INFO ] [PacienteDAOH2:48] iniciando la operacion de buscado de un paciente con id : 2
+[2024-05-23 19:51:30] [ INFO ] [DomicilioDAOH2:44] iniciando la busqueda de un domicilio con id: 2
+[2024-05-23 20:23:41] [ INFO ] [BD:29] tabla creada con exito
+[2024-05-23 20:23:41] [ INFO ] [PacienteDAOH2:48] iniciando la operacion de buscado de un paciente con id : 2
+[2024-05-23 20:23:41] [ INFO ] [DomicilioDAOH2:44] iniciando la busqueda de un domicilio con id: 2
+[2024-05-23 20:23:47] [ INFO ] [BD:29] tabla creada con exito
+[2024-05-23 20:23:47] [ INFO ] [PacienteDAOH2:48] iniciando la operacion de buscado de un paciente con id : 2
+[2024-05-23 20:23:47] [ INFO ] [DomicilioDAOH2:44] iniciando la busqueda de un domicilio con id: 2
+[2024-05-23 20:27:12] [ INFO ] [BD:29] tabla creada con exito
+[2024-05-23 20:27:12] [ INFO ] [PacienteDAOH2:48] iniciando la operacion de buscado de un paciente con id : 2
+[2024-05-23 20:27:12] [ INFO ] [DomicilioDAOH2:44] iniciando la busqueda de un domicilio con id: 2
+[2024-05-23 20:27:29] [ INFO ] [BD:29] tabla creada con exito
+[2024-05-23 20:27:29] [ INFO ] [PacienteDAOH2:48] iniciando la operacion de buscado de un paciente con id : 2
+[2024-05-23 20:27:29] [ INFO ] [DomicilioDAOH2:44] iniciando la busqueda de un domicilio con id: 2
+[2024-05-23 20:29:38] [ INFO ] [BD:29] tabla creada con exito
+[2024-05-23 20:34:24] [ INFO ] [PacienteDAOH2:110] iniciando la busqueda por email: german@german.com
+[2024-05-23 20:34:24] [ INFO ] [DomicilioDAOH2:44] iniciando la busqueda de un domicilio con id: 2
+[2024-05-23 20:45:21] [ INFO ] [BD:29] tabla creada con exito
+[2024-05-23 20:45:37] [ INFO ] [PacienteDAOH2:110] iniciando la busqueda por email: jorge.pereyra@digitalhouse.com
+[2024-05-23 20:45:37] [ INFO ] [DomicilioDAOH2:44] iniciando la busqueda de un domicilio con id: 1
+[2024-05-23 20:46:11] [ INFO ] [PacienteDAOH2:110] iniciando la busqueda por email: jorge.pereyra@digitalhouse.com
+[2024-05-23 20:46:11] [ INFO ] [DomicilioDAOH2:44] iniciando la busqueda de un domicilio con id: 1
+[2024-05-23 22:15:36] [ WARN ] [BD:40] Error de Sintaxis en sentencia SQL "INSERT INTO DOMICILIOS  (CALLE, NUMERO, LOCALIDAD, PROVINCIA) VALUES ('Siempre Viva',742,'Springfield','USA'),('Av. Uruguay',345,'Punta del Este','Uruguay')[*]INSERT INTO ODONTOLOGOS (ID, MATRICULA, NOMBRE, APELLIDO) VALUES ('1', '2352', 'Rene', 'Eldoctor')"
+Syntax error in SQL statement "INSERT INTO DOMICILIOS  (CALLE, NUMERO, LOCALIDAD, PROVINCIA) VALUES ('Siempre Viva',742,'Springfield','USA'),('Av. Uruguay',345,'Punta del Este','Uruguay')[*]INSERT INTO ODONTOLOGOS (ID, MATRICULA, NOMBRE, APELLIDO) VALUES ('1', '2352', 'Rene', 'Eldoctor')"; SQL statement:
+INSERT INTO DOMICILIOS  (CALLE, NUMERO, LOCALIDAD, PROVINCIA) VALUES ('Siempre Viva',742,'Springfield','USA'),('Av. Uruguay',345,'Punta del Este','Uruguay')INSERT INTO ODONTOLOGOS (ID, MATRICULA, NOMBRE, APELLIDO) VALUES ('1', '2352', 'Rene', 'Eldoctor') [42000-214]
+[2024-05-23 22:23:16] [ WARN ] [BD:40] Error de Sintaxis en sentencia SQL "INSERT INTO DOMICILIOS  (CALLE, NUMERO, LOCALIDAD, PROVINCIA) VALUES ('Siempre Viva',742,'Springfield','USA'),('Av. Uruguay',345,'Punta del Este','Uruguay')[*]INSERT INTO ODONTOLOGOS (ID, MATRICULA, NOMBRE, APELLIDO) VALUES ('','12345','Rene','Eldoctor')"
+Syntax error in SQL statement "INSERT INTO DOMICILIOS  (CALLE, NUMERO, LOCALIDAD, PROVINCIA) VALUES ('Siempre Viva',742,'Springfield','USA'),('Av. Uruguay',345,'Punta del Este','Uruguay')[*]INSERT INTO ODONTOLOGOS (ID, MATRICULA, NOMBRE, APELLIDO) VALUES ('','12345','Rene','Eldoctor')"; SQL statement:
+INSERT INTO DOMICILIOS  (CALLE, NUMERO, LOCALIDAD, PROVINCIA) VALUES ('Siempre Viva',742,'Springfield','USA'),('Av. Uruguay',345,'Punta del Este','Uruguay')INSERT INTO ODONTOLOGOS (ID, MATRICULA, NOMBRE, APELLIDO) VALUES ('','12345','Rene','Eldoctor') [42000-214]
+[2024-05-23 22:24:11] [ WARN ] [BD:40] Tabla "ODONTOLOGOS" no encontrada
+Table "ODONTOLOGOS" not found; SQL statement:
+INSERT INTO ODONTOLOGOS (ID, MATRICULA, NOMBRE, APELLIDO) VALUES ('','12345','Rene','Eldoctor');  [42102-214]
+[2024-05-23 22:26:02] [ WARN ] [BD:40] Tabla "ODONTOLOGOS" no encontrada
+Table "ODONTOLOGOS" not found; SQL statement:
+INSERT INTO ODONTOLOGOS (ID, MATRICULA, NOMBRE, APELLIDO) VALUES ('','12345','Rene','Eldoctor');  [42102-214]
+[2024-05-23 22:29:24] [ WARN ] [BD:40] Tabla "ODONTOLOGOS" no encontrada
+Table "ODONTOLOGOS" not found; SQL statement:
+INSERT INTO ODONTOLOGOS (ID, MATRICULA, NOMBRE, APELLIDO) VALUES ('1','12345','Rene','Eldoctor');  [42102-214]
+[2024-05-23 22:29:44] [ WARN ] [BD:40] Tabla "ODONTOLOGOS" no encontrada
+Table "ODONTOLOGOS" not found; SQL statement:
+INSERT INTO ODONTOLOGOS (MATRICULA, NOMBRE, APELLIDO) VALUES ('12345','Rene','Eldoctor');  [42102-214]
+[2024-05-23 22:30:24] [ INFO ] [BD:35] tabla creada con exito
+[2024-05-23 22:30:53] [ INFO ] [PacienteDAOH2:110] iniciando la busqueda por email: jorge.pereyra@digitalhouse.com
+[2024-05-23 22:30:53] [ INFO ] [DomicilioDAOH2:44] iniciando la busqueda de un domicilio con id: 1
+[2024-05-23 22:30:57] [ INFO ] [PacienteDAOH2:110] iniciando la busqueda por email: german@german.com
+[2024-05-23 22:30:57] [ INFO ] [DomicilioDAOH2:44] iniciando la busqueda de un domicilio con id: 2
+[2024-05-23 22:31:07] [ INFO ] [PacienteDAOH2:110] iniciando la busqueda por email: jorge.pereyra@digitalhouse.com
+[2024-05-23 22:31:07] [ INFO ] [DomicilioDAOH2:44] iniciando la busqueda de un domicilio con id: 1
+[2024-05-23 22:31:21] [ INFO ] [OdontologoDaoH2:83] iniciando la operacion de buscado de un odontologo con id : 1
+[2024-05-23 22:31:32] [ INFO ] [OdontologoDaoH2:83] iniciando la operacion de buscado de un odontologo con id : 2
+[2024-05-23 22:31:35] [ INFO ] [OdontologoDaoH2:83] iniciando la operacion de buscado de un odontologo con id : 1
+[2024-05-23 22:32:33] [ INFO ] [OdontologoDaoH2:83] iniciando la operacion de buscado de un odontologo con id : 1
+[2024-05-23 22:32:54] [ INFO ] [BD:35] tabla creada con exito
+[2024-05-23 22:33:21] [ INFO ] [PacienteDAOH2:110] iniciando la busqueda por email: german@german.com
+[2024-05-23 22:33:21] [ INFO ] [DomicilioDAOH2:44] iniciando la busqueda de un domicilio con id: 2
+[2024-05-23 22:33:28] [ INFO ] [OdontologoDaoH2:83] iniciando la operacion de buscado de un odontologo con id : 1
+[2024-05-23 22:33:34] [ INFO ] [PacienteDAOH2:110] iniciando la busqueda por email: jorge.pereyra@digitalhouse.com
+[2024-05-23 22:33:34] [ INFO ] [DomicilioDAOH2:44] iniciando la busqueda de un domicilio con id: 1
