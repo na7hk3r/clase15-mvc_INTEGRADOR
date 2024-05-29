@@ -1,14 +1,14 @@
 package BackEndC3.ClinicaOdontologica.controller;
 
+import BackEndC3.ClinicaOdontologica.dao.PacienteDAOH2;
 import BackEndC3.ClinicaOdontologica.model.Paciente;
 import BackEndC3.ClinicaOdontologica.service.PacienteService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
-@Controller //<-- es controller pq vamos a usar una tecnologia de vista
+@RestController
+// @Controller //<-- es controller para usar una tecnologia de vista
 @RequestMapping("/paciente")
 public class PacienteController {
     private PacienteService pacienteService;
@@ -17,7 +17,7 @@ public class PacienteController {
         pacienteService= new PacienteService();
     }
     //ahora vienen todos los metodos que nos permitan actuar como intermediarios.
-    @GetMapping
+    /* @GetMapping
     public String buscarPacientePorCorreo(Model model, @RequestParam("email") String email){
 
         Paciente paciente= pacienteService.buscarPorEmail(email);
@@ -26,5 +26,28 @@ public class PacienteController {
         return "index";
 
         //return pacienteService.buscarPorEmail(email);
+    }
+     */
+
+   @GetMapping("/{id}")
+    public Paciente buscarPaciente(@PathVariable Integer id){
+        return pacienteService.buscarPorID(id);
+    }
+
+
+    @PostMapping //Permite persistir datos que vienen desde vista
+    public Paciente guardarPaciente(@RequestBody Paciente paciente){
+        return pacienteService.guardarPaciente(paciente);
+    }
+
+    @PutMapping
+    public String actualizarPaciente(@RequestBody Paciente paciente){
+        Paciente pacienteBuscado= pacienteService.buscarPorID(paciente.getId());
+        if(pacienteBuscado!=null){
+            pacienteService.actualizarPaciente(paciente);
+            return "Paciente actualizado con exito";
+        } else {
+            return "Paciente no encontrado";
+        }
     }
 }

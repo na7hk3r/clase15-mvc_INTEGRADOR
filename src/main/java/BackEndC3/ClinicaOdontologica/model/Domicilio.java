@@ -27,7 +27,7 @@ public class Domicilio {
         this.provincia = provincia;
     }
 
-
+    public Domicilio(){}
 
     @Override
     public String toString() {

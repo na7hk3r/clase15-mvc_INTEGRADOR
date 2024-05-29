@@ -112,3 +112,29 @@ INSERT INTO ODONTOLOGOS (MATRICULA, NOMBRE, APELLIDO) VALUES ('12345','Rene','El
 [2024-05-23 23:37:28] [ INFO ] [PacienteDAOH2:110] iniciando la busqueda por email: jorge.pereyra@digitalhouse.com
 [2024-05-23 23:37:28] [ INFO ] [DomicilioDAOH2:44] iniciando la busqueda de un domicilio con id: 1
 [2024-05-23 23:37:41] [ INFO ] [OdontologoDaoH2:83] iniciando la operacion de buscado de un odontologo con id : 1
+[2024-05-28 20:52:52] [ INFO ] [BD:35] tabla creada con exito
+[2024-05-28 20:52:52] [ INFO ] [PacienteDAOH2:50] iniciando la operacion de buscado de un paciente con id : 2
+[2024-05-28 20:52:52] [ INFO ] [DomicilioDAOH2:45] iniciando la busqueda de un domicilio con id: 2
+[2024-05-28 20:53:17] [ INFO ] [BD:35] tabla creada con exito
+[2024-05-28 21:01:22] [ INFO ] [BD:35] tabla creada con exito
+[2024-05-28 21:05:36] [ INFO ] [PacienteDAOH2:21] inciando las operaciones de guardado
+[2024-05-28 21:05:36] [ INFO ] [DomicilioDAOH2:20] iniciando las operaciones de guardado
+[2024-05-28 21:05:36] [ INFO ] [DomicilioDAOH2:34] domicilio guardado
+[2024-05-28 21:05:36] [ INFO ] [PacienteDAOH2:39] paciente guardado
+[2024-05-28 21:06:20] [ INFO ] [PacienteDAOH2:50] iniciando la operacion de buscado de un paciente con id : null
+[2024-05-28 21:06:20] [ ERROR] [PacienteDAOH2:68] Cannot invoke "java.lang.Integer.intValue()" because "id" is null
+[2024-05-28 21:06:55] [ INFO ] [PacienteDAOH2:50] iniciando la operacion de buscado de un paciente con id : 3
+[2024-05-28 21:06:55] [ INFO ] [DomicilioDAOH2:45] iniciando la busqueda de un domicilio con id: 3
+[2024-05-28 21:06:55] [ WARN ] [PacienteDAOH2:82] Iniciando las operaciones de actualizacion de un paciente con id: 3
+[2024-05-28 21:06:55] [ INFO ] [DomicilioDAOH2:70] Iniciando la actualizacion del domicilio con id: null
+[2024-05-28 21:06:55] [ ERROR] [DomicilioDAOH2:83] Cannot invoke "java.lang.Integer.intValue()" because the return value of "BackEndC3.ClinicaOdontologica.model.Domicilio.getId()" is null
+[2024-05-28 21:06:55] [ ERROR] [PacienteDAOH2:99] Cannot invoke "java.lang.Integer.intValue()" because the return value of "BackEndC3.ClinicaOdontologica.model.Domicilio.getId()" is null
+[2024-05-28 21:07:35] [ INFO ] [PacienteDAOH2:50] iniciando la operacion de buscado de un paciente con id : 3
+[2024-05-28 21:07:35] [ INFO ] [DomicilioDAOH2:45] iniciando la busqueda de un domicilio con id: 3
+[2024-05-28 21:07:35] [ WARN ] [PacienteDAOH2:82] Iniciando las operaciones de actualizacion de un paciente con id: 3
+[2024-05-28 21:07:35] [ INFO ] [DomicilioDAOH2:70] Iniciando la actualizacion del domicilio con id: 3
+[2024-05-28 21:14:45] [ INFO ] [BD:35] tabla creada con exito
+[2024-05-28 21:14:56] [ INFO ] [PacienteDAOH2:131] iniciando la busqueda por email: julian@julian.com
+[2024-05-28 21:15:24] [ INFO ] [BD:35] tabla creada con exito
+[2024-05-28 21:15:39] [ INFO ] [PacienteDAOH2:131] iniciando la busqueda por email: julian@julian.com
+[2024-05-28 21:17:55] [ INFO ] [BD:35] tabla creada con exito

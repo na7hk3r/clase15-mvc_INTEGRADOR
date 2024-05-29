@@ -11,9 +11,11 @@ import java.util.List;
 public class PacienteDAOH2 implements iDao<Paciente> {
     private static final Logger logger= Logger.getLogger(PacienteDAOH2.class);
     private static final String SQL_SELECT_ONE="SELECT * FROM PACIENTES WHERE ID=?";
-    private static final String SQL_INSERT="INSERT INTO PACIENTES(NOMBRE, APELLIDO, CEDULA, FECHA_INGRESO, DOMICILIO_ID) VALUES(?,?,?,?,?)";
+    private static final String SQL_INSERT="INSERT INTO PACIENTES(NOMBRE, APELLIDO, CEDULA, FECHA_INGRESO, DOMICILIO_ID, EMAIL) VALUES(?,?,?,?,?,?)";
     private static final String SQL_SELECT_ALL="SELECT * FROM PACIENTES";
     private static final String SQL_SELECT_BY_EMAIL="SELECT * FROM PACIENTES WHERE EMAIL=?";
+
+    private static final String SQL_UPDATE="UPDATE PACIENTES SET NOMBRE=?, APELLIDO=?, CEDULA=?, FECHA_INGRESO=?, DOMICILIO_ID=?, EMAIL=? WHERE ID=?";
     @Override
     public Paciente guardar(Paciente paciente) {
         logger.info("inciando las operaciones de guardado");
@@ -77,6 +79,25 @@ public class PacienteDAOH2 implements iDao<Paciente> {
 
     @Override
     public void actualizar(Paciente paciente) {
+        logger.warn("Iniciando las operaciones de actualizacion de un paciente con id: "+paciente.getId());
+        Connection connection= null;
+        DomicilioDAOH2 daoAux= new DomicilioDAOH2();
+        try{
+            connection= BD.getConnection();
+            daoAux.actualizar(paciente.getDomicilio());
+            PreparedStatement psUpdate= connection.prepareStatement(SQL_UPDATE);
+            psUpdate.setString(1, paciente.getNombre());
+            psUpdate.setString(2, paciente.getApellido());
+            psUpdate.setString(3, paciente.getCedula());
+            psUpdate.setDate(4,Date.valueOf(paciente.getFechaIngreso()));
+            psUpdate.setInt(5,paciente.getDomicilio().getId());
+            psUpdate.setString(6, paciente.getEmail());
+            psUpdate.setInt(7,paciente.getId());
+            psUpdate.execute();
+
+        }catch (Exception e){
+            logger.error(e.getMessage());
+        }
 
     }
 
