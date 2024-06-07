@@ -14,9 +14,11 @@ public class Turno {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column
+    @ManyToOne
+    @JoinColumn(name = "paciente_id", referencedColumnName = "id")
     private Paciente paciente;
-    @Column
+    @ManyToOne
+    @JoinColumn(name = "odontologo_id", referencedColumnName = "id")
     private Odontologo odontologo;
     @Column
     private LocalDate fecha;
