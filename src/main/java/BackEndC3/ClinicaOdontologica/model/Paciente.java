@@ -37,8 +37,13 @@ public class Paciente {
         this.email= email;
     }
 
+<<<<<<< HEAD
     public Paciente() {
     }
+=======
+ public Paciente(){}
+
+>>>>>>> 68f719ac0ad83308b92b10f60809a4dc53434eac
 
     @Override
     public String toString() {
