@@ -23,9 +23,7 @@ private iDao<Paciente> pacienteiDao;
     public Paciente buscarPorEmail(String email){
         return pacienteiDao.buscarPorString(email);
     }
-<<<<<<< HEAD
-    public void actualizarPaciente(Paciente paciente) {pacienteiDao.actualizar(paciente); }
-=======
+
     public void actualizarPaciente(Paciente paciente){
         pacienteiDao.actualizar(paciente);
     }
@@ -33,5 +31,5 @@ private iDao<Paciente> pacienteiDao;
     public List<Paciente> buscarTodos(){
         return pacienteiDao.buscarTodos();
     }
->>>>>>> 68f719ac0ad83308b92b10f60809a4dc53434eac
+
 }
