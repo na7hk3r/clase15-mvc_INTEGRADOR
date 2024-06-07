@@ -1,14 +1,22 @@
-package BackEndC3.ClinicaOdontologica.model;
+package BackEndC3.ClinicaOdontologica.entity;
 
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
+@Entity
+@Table(name = "odontologos")
 public class Odontologo {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @Column(nullable = false)
     private Integer matricula;
+    @Column
     private String nombre;
+    @Column
     private String apellido;
 
     public Odontologo(Integer id, Integer matricula, String nombre, String apellido) {

@@ -1,10 +1,8 @@
 package BackEndC3.ClinicaOdontologica.controller;
 
-import BackEndC3.ClinicaOdontologica.dao.OdontologoDaoH2;
-import BackEndC3.ClinicaOdontologica.dao.PacienteDAOH2;
-import BackEndC3.ClinicaOdontologica.model.Odontologo;
-import BackEndC3.ClinicaOdontologica.model.Paciente;
-import BackEndC3.ClinicaOdontologica.model.Turno;
+import BackEndC3.ClinicaOdontologica.entity.Odontologo;
+import BackEndC3.ClinicaOdontologica.entity.Paciente;
+import BackEndC3.ClinicaOdontologica.entity.Turno;
 import BackEndC3.ClinicaOdontologica.service.OdontologoService;
 import BackEndC3.ClinicaOdontologica.service.PacienteService;
 import BackEndC3.ClinicaOdontologica.service.TurnoService;
@@ -12,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/turnos")
@@ -28,8 +27,8 @@ public class TurnoController {
 
     @PostMapping
     public ResponseEntity<Turno> guardarTurno(@RequestBody Turno turno){
-        Paciente pacienteBuscado= pacienteService.buscarPorID(turno.getPaciente().getId());
-        Odontologo odontologoBuscado= odontologoService.buscarPorId(turno.getOdontologo().getId());
+        Optional<Paciente> pacienteBuscado= pacienteService.buscarPorID(turno.getPaciente().getId());
+        Optional<Odontologo> odontologoBuscado= odontologoService.buscarPorId(turno.getOdontologo().getId());
         if(pacienteBuscado!=null&&odontologoBuscado!=null){
             return ResponseEntity.ok(turnoService.guardarTurno(turno));
         }else{

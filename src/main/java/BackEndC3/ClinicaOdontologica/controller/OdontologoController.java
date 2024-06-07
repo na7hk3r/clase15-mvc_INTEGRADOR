@@ -1,10 +1,8 @@
 package BackEndC3.ClinicaOdontologica.controller;
 
-import BackEndC3.ClinicaOdontologica.model.Odontologo;
+import BackEndC3.ClinicaOdontologica.entity.Odontologo;
 import BackEndC3.ClinicaOdontologica.service.OdontologoService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,7 +19,7 @@ public class OdontologoController {
         return odontologoService.guardar(odontologo);
     }
     @GetMapping
-    public List<Odontologo> listarTodos(){
-        return odontologoService.buscarTodos();
+    public ResponseEntity<List<Odontologo>> listarTodos(){
+        return ResponseEntity.ok(odontologoService.buscarTodos());
     }
 }

@@ -1,15 +1,23 @@
-package BackEndC3.ClinicaOdontologica.model;
+package BackEndC3.ClinicaOdontologica.entity;
 
-import lombok.Getter;
-import lombok.Setter;
+import jakarta.persistence.*;
+import lombok.*;
 
 @Getter
 @Setter
+@Entity
+@Table(name = "domicilios")
 public class Domicilio {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @Column
     private String calle;
+    @Column
     private Integer numero;
+    @Column
     private String localidad;
+    @Column
     private String provincia;
 
     public Domicilio(String calle, Integer numero, String localidad, String provincia) {
