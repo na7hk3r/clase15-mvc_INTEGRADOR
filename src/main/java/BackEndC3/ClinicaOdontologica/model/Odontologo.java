@@ -7,28 +7,31 @@ import lombok.Setter;
 @Setter
 public class Odontologo {
     private Integer id;
-    private Integer nroMatricula;
+    private Integer matricula;
     private String nombre;
     private String apellido;
 
-    public Odontologo(Integer id, Integer nroMatricula, String nombre, String apellido) {
+    public Odontologo(Integer id, Integer matricula, String nombre, String apellido) {
         this.id = id;
-        this.nroMatricula = nroMatricula;
+        this.matricula = matricula;
         this.nombre = nombre;
         this.apellido = apellido;
     }
 
-    public Odontologo(Integer nroMatricula, String nombre, String apellido) {
-        this.nroMatricula = nroMatricula;
+    public Odontologo(Integer matricula, String nombre, String apellido) {
+        this.matricula = matricula;
         this.nombre = nombre;
         this.apellido = apellido;
+    }
+
+    public Odontologo() {
     }
 
     @Override
     public String toString() {
         return "Odontologo con: " +
                 "id=" + id +
-                ", nroMatricula=" + nroMatricula +
+                ", matricula=" + matricula +
                 ", nombre='" + nombre + apellido;
     }
 }

@@ -9,6 +9,8 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import static BackEndC3.ClinicaOdontologica.dao.BD.getConnection;
+
 public class OdontologoDaoH2 implements iDao<Odontologo> {
 
     private final static String DB_JDBC_DRIVER = "org.h2.Driver";
@@ -20,13 +22,13 @@ public class OdontologoDaoH2 implements iDao<Odontologo> {
     private final static String SQL_CREATE_TABLE = "CREATE TABLE IF NOT EXISTS odontologos"
             + "("
             + " id INT PRIMARY KEY AUTO_INCREMENT,"
-            + " nroMatricula INT NOT NULL,"
-            + " nombre varchar(25) NOT NULL,"
-            + " apellido varchar(25) NOT NULL"
+            + " MATRICULA INT NOT NULL,"
+            + " NOMBRE varchar(25) NOT NULL,"
+            + " APELLIDO varchar(25) NOT NULL"
             + ");";
 
     //SQL para insertar registros
-    private final static String SQL_INSERT = "INSERT INTO ODONTOLOGOS ( nroMatricula, nombre, apellido) VALUES (?,?,?)";
+    private final static String SQL_INSERT = "INSERT INTO ODONTOLOGOS ( matricula, nombre, apellido) VALUES (?,?,?)";
 
     //SQL para listar todos los odontólogos
     private final static String SQL_FINDALL="SELECT * FROM ODONTOLOGOS ";
@@ -34,46 +36,34 @@ public class OdontologoDaoH2 implements iDao<Odontologo> {
 
     private static final Logger logger = Logger.getLogger(OdontologoDaoH2.class);
 
-    public static Connection getConnection()  {
-        Connection connection = null;
-        try {
-            Class.forName(DB_JDBC_DRIVER);
-            connection= DriverManager.getConnection(DB_URL,DB_USER,DB_PASSWORD);
-
-            Statement statement = connection.createStatement();
-            logger.info("Conexión exitosa a la tabla");
-            statement.execute(SQL_CREATE_TABLE);
-
-        }  catch (ClassNotFoundException | SQLException e) {
-            e.printStackTrace();
-            logger.error("error de conexión a la BD");
-        }
-        return connection;
-    }
 
 
     @Override
     public Odontologo guardar(Odontologo odontologo) {
         PreparedStatement psInsert=null;
+        Connection connection =null;
         //1 Levantar el driver y conectarnos
         try {
 
             //2 Crear una sentencia
+            connection = BD.getConnection();
             psInsert=getConnection().prepareStatement(SQL_INSERT);
-            psInsert.setInt(1,odontologo.getNroMatricula());
+            psInsert.setInt(1,odontologo.getMatricula());
             psInsert.setString(2,odontologo.getNombre());
             psInsert.setString(3,odontologo.getApellido());
 
             //3 Ejecutar la setencia
 
             psInsert.execute();
-            logger.info("se ha insertado el registro con matricula " + odontologo.getNroMatricula()+ " correspondiente a "+odontologo.getNombre()+odontologo.getApellido()+" en la BD");
-            psInsert.close();
+            logger.info("se ha insertado el registro con matricula " + odontologo.getMatricula()+ " correspondiente a "+odontologo.getNombre()+odontologo.getApellido()+" en la BD");
+          //  psInsert.close();
 
         } catch (SQLException e) {
             e.printStackTrace();
             logger.error("error en la inserción del registro a la BD");
 
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
         return odontologo;
     }
@@ -84,7 +74,7 @@ public class OdontologoDaoH2 implements iDao<Odontologo> {
         Connection connection= null;
         Odontologo odontologo= null;
         try{
-            connection= BD.getConnection();
+            connection= getConnection();
             Statement statement= connection.createStatement();
             PreparedStatement psSElectOne= connection.prepareStatement(SQL_SELECT_ONE);
             psSElectOne.setInt(1,id);
@@ -105,42 +95,25 @@ public class OdontologoDaoH2 implements iDao<Odontologo> {
 
     @Override
     public List<Odontologo> buscarTodos() {
-        PreparedStatement psBuscarTodos=null;
-        List<Odontologo> odontologos=new ArrayList<>();
-        Odontologo odontologo=null;
-
-        try {
-
-            //1 conectarme y crear sentencia
-            psBuscarTodos=getConnection().prepareStatement(SQL_FINDALL);
-
-            //3 Ejecutar la setencia
-
-            ResultSet rs = psBuscarTodos.executeQuery();
-
-            //Armar objeto con datos obtenidos
-            while (rs.next()) {
-                logger.info("buscando la información del odontólogo");
-
-                Integer idOdontologo = rs.getInt(1);
-                Integer nroMatricula = rs.getInt(2);
-                String nombre = rs.getString(3);
-                String apellido = rs.getString(4);
-
-                odontologo = new Odontologo( idOdontologo,nroMatricula,nombre, apellido );
-
-                odontologos.add(odontologo);
+        logger.info("iniciando las operaciones de:  listado de todos los odontologos");
+        List<Odontologo> listaOdontologos= new ArrayList<>();
+        Odontologo odontologo= null;
+        Connection connection= null;
+        try{
+            connection= getConnection();
+            Statement statement= connection.createStatement();
+            ResultSet rs= statement.executeQuery(SQL_FINDALL);
+            while (rs.next()){
+                //construir el odontologo
+                odontologo= new Odontologo(rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getString(4));
+                //solo me resta agregarselo a la lista.
+                listaOdontologos.add(odontologo);
             }
-            logger.info("la lista de odontólogos es "+odontologos);
-            psBuscarTodos.close();
 
-        } catch (SQLException e) {
-            e.printStackTrace();
-            logger.error("error buscando los odontólogos en la BD");
-
+        }catch (Exception e){
+            logger.error(e.getMessage());
         }
-
-        return odontologos;
+        return listaOdontologos;
     }
 
     @Override

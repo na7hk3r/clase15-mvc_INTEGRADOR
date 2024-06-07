@@ -37,8 +37,8 @@ public class Paciente {
         this.email= email;
     }
 
-
-
+    public Paciente() {
+    }
 
     @Override
     public String toString() {

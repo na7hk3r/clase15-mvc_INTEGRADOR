@@ -20,4 +20,5 @@ private iDao<Paciente> pacienteiDao;
     public Paciente buscarPorEmail(String email){
         return pacienteiDao.buscarPorString(email);
     }
+    public void actualizarPaciente(Paciente paciente) {pacienteiDao.actualizar(paciente); }
 }
