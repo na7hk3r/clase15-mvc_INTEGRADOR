@@ -16,10 +16,10 @@ public class OdontologoController {
 
     @PostMapping
     public ResponseEntity<Odontologo> guardarOdontologo(@RequestBody Odontologo odontologo){
-        return ResponseEntity.ok(odontologoService.guardar(odontologo));
+        return ResponseEntity.ok(odontologoService.guardarOdontologo(odontologo));
     }
     @GetMapping
-    public ResponseEntity<List<Odontologo>> listarTodos(){
+    public ResponseEntity<List<Odontologo>> buscarTodos(){
         return ResponseEntity.ok(odontologoService.buscarTodos());
     }
 }

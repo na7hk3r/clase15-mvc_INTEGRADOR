@@ -22,10 +22,10 @@ public class Paciente {
     private String cedula;
     @Column
     private LocalDate fechaIngreso;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "domicilio_id", referencedColumnName = "id")
     private Domicilio domicilio;
-    @Column(unique = true)
+    @Column(unique = true, nullable = false)
     private String email;
 
     public Paciente(String nombre, String apellido, String cedula, LocalDate fechaIngreso, Domicilio domicilio, String email) {
@@ -37,6 +37,7 @@ public class Paciente {
         this.email= email;
     }
 
+
     public Paciente(Integer id, String nombre, String apellido, String cedula, LocalDate fechaIngreso, Domicilio domicilio, String email) {
         this.id = id;
         this.nombre = nombre;
@@ -47,7 +48,8 @@ public class Paciente {
         this.email= email;
     }
 
-    public Paciente() {}
+    public Paciente() {
+    }
 
     @Override
     public String toString() {

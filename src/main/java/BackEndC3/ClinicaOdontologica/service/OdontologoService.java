@@ -13,7 +13,7 @@ public class OdontologoService {
     @Autowired
     private OdontologoRepository odontologoRepository;
 
-    public Odontologo guardar(Odontologo odontologo){ return odontologoRepository.save(odontologo); }
+    public Odontologo guardarOdontologo(Odontologo odontologo){ return odontologoRepository.save(odontologo); }
     public Optional<Odontologo> buscarPorId(Integer id) { return odontologoRepository.findById(id); }
     public List<Odontologo> buscarTodos(){ return odontologoRepository.findAll(); }
     public void actualizarOdontologo(Odontologo odontologo){ odontologoRepository.save(odontologo); }
