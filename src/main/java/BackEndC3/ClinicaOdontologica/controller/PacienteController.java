@@ -19,11 +19,11 @@ public class PacienteController {
     public ResponseEntity<Paciente> guardarPaciente(@RequestBody Paciente paciente){
         return ResponseEntity.ok(pacienteService.guardarPaciente(paciente));
     }
-    @GetMapping("/buscar/{id}")
+    @GetMapping("/buscarid/{id}")
     public ResponseEntity<Optional<Paciente>> buscarPaciente(@PathVariable Integer id){
         return ResponseEntity.ok(pacienteService.buscarPorID(id));
     }
-    @GetMapping("/buscar/{email}")
+    @GetMapping("/buscaremail/{email}")
     public ResponseEntity<Optional<Paciente>> buscarPorEmail(@PathVariable String email){
         Optional<Paciente> pacienteBuscado = pacienteService.buscarPorEmail(email);
         if(pacienteBuscado.isPresent()){
