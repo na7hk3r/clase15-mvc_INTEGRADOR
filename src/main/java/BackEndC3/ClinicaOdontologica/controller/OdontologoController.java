@@ -33,4 +33,14 @@ public class OdontologoController {
     public ResponseEntity<Optional<Odontologo>> buscarOdontologo(@PathVariable Integer id) {
         return ResponseEntity.ok(odontologoService.buscarPorId(id));
     }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> eliminarOdontologo(@PathVariable Integer id){
+        Optional<Odontologo> odontologoBuscado = odontologoService.buscarPorId(id);
+
+        if(odontologoBuscado.isEmpty()){
+            return ResponseEntity.badRequest().body("Usuario no encontrado");
+        }
+        odontologoService.eliminarOdontologoPorId(odontologoBuscado.get().getId());
+        return ResponseEntity.ok("Usuario eliminado");
     }
+}

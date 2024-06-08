@@ -47,4 +47,14 @@ public class PacienteController {
             return ResponseEntity.badRequest().build();
         }
     }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> eliminarPaciente(@PathVariable Integer id){
+        Optional<Paciente> pacienteBuscado = pacienteService.buscarPorID(id);
+
+        if(pacienteBuscado.isEmpty()){
+            return ResponseEntity.badRequest().body("Usuario no encontrado");
+        }
+        pacienteService.eliminarPacientePorId(pacienteBuscado.get().getId());
+        return ResponseEntity.ok("Usuario eliminado");
+    }
 }

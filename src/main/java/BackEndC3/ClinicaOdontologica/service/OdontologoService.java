@@ -17,6 +17,6 @@ public class OdontologoService {
     public Optional<Odontologo> buscarPorId(Integer id) { return odontologoRepository.findById(id); }
     public List<Odontologo> buscarTodos(){ return odontologoRepository.findAll(); }
     public void actualizarOdontologo(Odontologo odontologo){ odontologoRepository.save(odontologo); }
-    public void eliminarOdontologo(Integer id){ odontologoRepository.deleteById(id); }
+    public void eliminarOdontologoPorId(Integer id){ odontologoRepository.deleteById(id); }
     public Optional<Odontologo> buscarPorMatricula(Integer matricula) { return odontologoRepository.findByMatricula(matricula); }
 }

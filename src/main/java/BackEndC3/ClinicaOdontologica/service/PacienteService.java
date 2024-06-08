@@ -26,7 +26,7 @@ public class PacienteService {
     public void actualizarPaciente(Paciente paciente){
         pacienteRepository.save(paciente);
     }
-    public void eliminarPaciente(Integer id){
+    public void eliminarPacientePorId(Integer id){
         pacienteRepository.deleteById(id);
     }
     public List<Paciente> buscarTodos(){
