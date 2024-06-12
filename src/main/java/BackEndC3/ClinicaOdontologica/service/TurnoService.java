@@ -19,5 +19,5 @@ public class TurnoService {
         return turnoRepository.findAll();
     }
     public void actualizarTurno(Turno turno){ turnoRepository.save(turno); }
-    public void eliminarTurno(Integer id){ turnoRepository.deleteById(id); }
+    public void eliminarTurnoPorId(Integer id){ turnoRepository.deleteById(id); }
 }
