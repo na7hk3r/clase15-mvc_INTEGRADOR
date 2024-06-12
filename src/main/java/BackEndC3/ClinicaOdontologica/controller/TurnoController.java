@@ -24,15 +24,18 @@ public class TurnoController {
     private OdontologoService odontologoService;
 
     @PostMapping
-    public ResponseEntity<Turno> guardarTurno(@RequestBody Turno turno){
-        Optional<Paciente> pacienteBuscado= pacienteService.buscarPorID(turno.getPaciente().getId());
-        Optional<Odontologo> odontologoBuscado= odontologoService.buscarPorId(turno.getOdontologo().getId());
-        if(pacienteBuscado!=null&&odontologoBuscado!=null){
-            return ResponseEntity.ok(turnoService.guardarTurno(turno));
-        }else{
+    public ResponseEntity<Turno> guardarTurno(@RequestBody Turno turno) {
+        Optional<Paciente> pacienteBuscado = pacienteService.buscarPorID(turno.getPaciente().getId());
+        Optional<Odontologo> odontologoBuscado = odontologoService.buscarPorId(turno.getOdontologo().getId());
+
+        if (pacienteBuscado.isPresent() && odontologoBuscado.isPresent()) {
+            turno.setPaciente(pacienteBuscado.get());
+            turno.setOdontologo(odontologoBuscado.get());
+            Turno turnoGuardado = turnoService.guardarTurno(turno);
+            return ResponseEntity.ok(turnoGuardado);
+        } else {
             return ResponseEntity.badRequest().build();
         }
-
     }
     @GetMapping
     public ResponseEntity<List<Turno>> buscarTodos(){
