@@ -1,4 +1,3 @@
-
 window.addEventListener('load', function () {
     (function(){
       const url = '/odontologos';
