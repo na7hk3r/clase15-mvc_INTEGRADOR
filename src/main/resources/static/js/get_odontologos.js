@@ -9,7 +9,7 @@ window.addEventListener('load', function () {
       .then(response => response.json())
       .then(data => {
 
-         for(odontologo of data){
+         for (odontologo of data){
 
             var table = document.getElementById("odontologoTable");
             var odontologoRow =table.insertRow();

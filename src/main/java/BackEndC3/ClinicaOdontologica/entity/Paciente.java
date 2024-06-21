@@ -38,7 +38,7 @@ public class Paciente {
     }
 
 
-    public Paciente(Integer id, String nombre, String apellido, String cedula, LocalDate fechaIngreso, Domicilio domicilio, String email) {
+    public Paciente(String nombre, String apellido, String cedula) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -51,6 +51,12 @@ public class Paciente {
     public Paciente() {
     }
 
+    public Paciente(String nombre, String apellido, String cedula, String email) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.cedula = cedula;
+        this.email= email;
+    }
     @Override
     public String toString() {
         return "Paciente{" +
