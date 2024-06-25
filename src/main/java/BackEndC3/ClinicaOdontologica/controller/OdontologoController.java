@@ -1,7 +1,6 @@
 package BackEndC3.ClinicaOdontologica.controller;
 
 import BackEndC3.ClinicaOdontologica.entity.Odontologo;
-import BackEndC3.ClinicaOdontologica.entity.Paciente;
 import BackEndC3.ClinicaOdontologica.exeption.ResourceNotFoundException;
 
 import java.util.List;
@@ -16,6 +15,8 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/odontologos")
 public class OdontologoController {
+
+    // relacion de asociacion con el servicio
     @Autowired
     private OdontologoService odontologoService;
 
@@ -36,25 +37,28 @@ public class OdontologoController {
         }
     }
 
-    @GetMapping("/buscarid/{id}")
-    public ResponseEntity<Optional<Odontologo>> buscarPaciente(@PathVariable Integer id) {
+    @GetMapping("/{id}")
+    public ResponseEntity<Optional<Odontologo>> buscarPorID(
+            @PathVariable Long id
+    ) {
         return ResponseEntity.ok(odontologoService.buscarPorId(id));
     }
 
     @GetMapping("/busqueda/{matricula}")
     public ResponseEntity<Optional<Odontologo>> buscarPorMatricula(
-            @PathVariable Integer matricula
+            @PathVariable String matricula
     ) {
         return ResponseEntity.ok(odontologoService.buscarPorMatricula(matricula));
     }
 
     @GetMapping
-    public ResponseEntity<List<Odontologo>> listarTodos(){
+    public ResponseEntity<List<Odontologo>> listarTodos() {
+
         return ResponseEntity.ok(odontologoService.listarTodos());
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> eliminarOdontologo(@PathVariable Integer id)
+    public ResponseEntity<String> eliminarOdontologo(@PathVariable Long id)
             throws ResourceNotFoundException {
         Optional<Odontologo> odontologoBuscado = odontologoService.buscarPorId(id);
 

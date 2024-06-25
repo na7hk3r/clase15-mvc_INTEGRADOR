@@ -35,8 +35,8 @@ public class DatosIniciales implements ApplicationRunner {
         Usuario admin= new Usuario("mathi","admin","admin@admin.com",passCifrado, UsuarioRole.ROLE_ADMIN);
 
         // Dato de odontologo, paciente  y turnos hard-coded
-        Odontologo odontologo= new Odontologo(420,"mathias", "el anestecista");
-        Odontologo odontologo2= new Odontologo(421,"rene", "el doktor");
+        Odontologo odontologo= new Odontologo("420","mathias", "el anestecista");
+        Odontologo odontologo2= new Odontologo("421","rene", "el doktor");
         Paciente paciente= new Paciente ("Jorgito","Pereyra", "4564", "jorgito@gmail.com");
         Paciente paciente2= new Paciente ("German","el paciente", "464", "german@gmail.com");
         Turno turno = new Turno(paciente, odontologo, LocalDate.now());

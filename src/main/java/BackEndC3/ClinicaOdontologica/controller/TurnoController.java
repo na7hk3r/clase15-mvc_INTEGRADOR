@@ -26,7 +26,7 @@ public class TurnoController {
 
     @PostMapping
     public ResponseEntity<Turno> guardarTurno(@RequestBody Turno turno) {
-        Optional<Paciente> pacienteBuscado = pacienteService.buscarPorID(turno.getPaciente().getId());
+        Optional<Paciente> pacienteBuscado = pacienteService.buscarPorId(turno.getPaciente().getId());
         Optional<Odontologo> odontologoBuscado = odontologoService.buscarPorId(turno.getOdontologo().getId());
 
         if (pacienteBuscado.isPresent() && odontologoBuscado.isPresent()) {

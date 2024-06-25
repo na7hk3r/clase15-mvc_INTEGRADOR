@@ -13,7 +13,7 @@ import java.time.LocalDate;
 public class Paciente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     @Column
     private String nombre;
     @Column
@@ -38,14 +38,12 @@ public class Paciente {
     }
 
 
-    public Paciente(String nombre, String apellido, String cedula) {
+    public Paciente(Long id, String nombre, String apellido, String cedula) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.cedula = cedula;
-        this.fechaIngreso = fechaIngreso;
-        this.domicilio = domicilio;
-        this.email= email;
+
     }
 
     public Paciente() {

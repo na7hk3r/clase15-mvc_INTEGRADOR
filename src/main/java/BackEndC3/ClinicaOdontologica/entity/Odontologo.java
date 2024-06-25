@@ -11,25 +11,28 @@ import lombok.Setter;
 public class Odontologo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     @Column(nullable = false)
-    private Integer matricula;
+    private String matricula;
     @Column
     private String nombre;
     @Column
     private String apellido;
 
-    public Odontologo(Integer id, Integer matricula, String nombre, String apellido) {
+    public Odontologo(Long id, String matricula, String nombre, String apellido) {
         this.id = id;
         this.matricula = matricula;
         this.nombre = nombre;
         this.apellido = apellido;
     }
 
-    public Odontologo(Integer matricula, String nombre, String apellido) {
+    public Odontologo(String matricula, String nombre, String apellido) {
         this.matricula = matricula;
         this.nombre = nombre;
         this.apellido = apellido;
+    }
+
+    public Odontologo(Long id) {this.id = id;
     }
 
     public Odontologo() {
