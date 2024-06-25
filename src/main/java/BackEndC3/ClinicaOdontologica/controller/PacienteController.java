@@ -1,11 +1,13 @@
 package BackEndC3.ClinicaOdontologica.controller;
+
+import BackEndC3.ClinicaOdontologica.entity.Odontologo;
 import BackEndC3.ClinicaOdontologica.entity.Paciente;
 import BackEndC3.ClinicaOdontologica.exeption.ResourceNotFoundException;
 
 import java.util.List;
 import java.util.Optional;
 
-
+import BackEndC3.ClinicaOdontologica.service.OdontologoService;
 import BackEndC3.ClinicaOdontologica.service.PacienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -21,7 +23,7 @@ public class PacienteController {
     private PacienteService pacienteService;
 
     @PutMapping
-    public ResponseEntity<String>actualizarPaciente(
+    public ResponseEntity<String> actualizarPaciente(
             @RequestBody Paciente paciente
     ) {
         Optional<Paciente> pacienteBuscado = pacienteService.buscarPorId(
@@ -31,9 +33,9 @@ public class PacienteController {
         if (pacienteBuscado.isPresent()) {
             pacienteService.actualizarPaciente(paciente);
 
-            return ResponseEntity.ok("Paciente actualizado");
+            return ResponseEntity.ok("paciente actualizado");
         } else {
-            return ResponseEntity.badRequest().body("Paciente no encontrado");
+            return ResponseEntity.badRequest().body("paciente no encontrado");
         }
     }
 
@@ -64,7 +66,7 @@ public class PacienteController {
 
         if (pacienteBuscado.isEmpty()) {
             throw new ResourceNotFoundException(
-                    "No se pudo eliminar el paciente, debido a que no existe"
+                    "No se pudo eliminar el odontologo, debido a que no existe"
             );
         } else {
             pacienteService.eliminarPaciente(id);

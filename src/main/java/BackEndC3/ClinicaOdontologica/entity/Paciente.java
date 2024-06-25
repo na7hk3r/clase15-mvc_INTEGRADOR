@@ -38,13 +38,7 @@ public class Paciente {
     }
 
 
-    public Paciente(Long id, String nombre, String apellido, String cedula) {
-        this.id = id;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.cedula = cedula;
 
-    }
 
     public Paciente() {
     }
