@@ -21,7 +21,7 @@ public class PacienteController {
     private PacienteService pacienteService;
 
     @PutMapping
-    public ResponseEntity<String>ac(
+    public ResponseEntity<String>actualizarPaciente(
             @RequestBody Paciente paciente
     ) {
         Optional<Paciente> pacienteBuscado = pacienteService.buscarPorId(

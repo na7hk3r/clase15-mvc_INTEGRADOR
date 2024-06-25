@@ -14,7 +14,7 @@ window.addEventListener('load', function () {
 
             var table = document.getElementById("pacienteTable");
             var pacienteRow =table.insertRow();
-            let tr_id = paciente.id;
+            let tr_id = 'tr_' + paciente.id;
             pacienteRow.id = tr_id;
 
 
