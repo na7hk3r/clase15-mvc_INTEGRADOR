@@ -37,18 +37,9 @@ public class Paciente {
         this.email= email;
     }
 
-
-
-
     public Paciente() {
     }
 
-    public Paciente(String nombre, String apellido, String cedula, String email) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.cedula = cedula;
-        this.email= email;
-    }
     @Override
     public String toString() {
         return "Paciente{" +

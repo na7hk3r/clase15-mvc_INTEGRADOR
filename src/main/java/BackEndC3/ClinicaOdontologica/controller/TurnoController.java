@@ -53,4 +53,14 @@ public class TurnoController {
         turnoService.eliminarTurnoPorId(turnoBuscado.get().getId());
         return ResponseEntity.ok("Turno eliminado con éxito");
     }
+    @PutMapping
+    public ResponseEntity<String> actualizarTurno(@RequestBody Turno turno) throws ResourceNotFoundException {
+        Optional<Turno> turnoBuscado = turnoService.buscarPorId(turno.getId());
+        if (turnoBuscado.isPresent()) {
+            turnoService.actualizarTurno(turno);
+            return ResponseEntity.ok("Turno actualizado con éxito");
+        } else {
+            throw new ResourceNotFoundException("Turno con ID: " + turno.getId() + " no encontrado");
+        }
+    }
 }

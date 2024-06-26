@@ -37,8 +37,8 @@ public class DatosIniciales implements ApplicationRunner {
         // Dato de odontologo, paciente  y turnos hard-coded
         Odontologo odontologo= new Odontologo("420","mathias", "el anestecista");
         Odontologo odontologo2= new Odontologo("421","rene", "el doktor");
-        Paciente paciente= new Paciente ("Jorgito","Pereyra", "4564", "jorgito@gmail.com");
-        Paciente paciente2= new Paciente ("German","el paciente", "464", "german@gmail.com");
+        Paciente paciente= new Paciente("jorguito", "el carnal", "234", LocalDate.of(2024,05,26), new Domicilio( "de atras", 13, "Su casa", "Argentina"),"jorguito@jorguito.com");
+        Paciente paciente2= new Paciente ("German","el paciente", "464", LocalDate.of(2024,05,26), new Domicilio("de atras", 21, "Su casa", "Uruguay"), "german@gmail.com");
         Turno turno = new Turno(paciente, odontologo, LocalDate.now());
         usuarioRepository.save(usuario);
         usuarioRepository.save(admin);
