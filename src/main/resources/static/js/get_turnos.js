@@ -14,7 +14,7 @@ window.addEventListener('load', function () {
 
             var table = document.getElementById("turnoTable");
             var turnoRow =table.insertRow();
-            let tr_id = turno.id;
+            let tr_id = 'tr_' + turno.id;
             turnoRow.id = tr_id;
 
 
@@ -24,19 +24,27 @@ window.addEventListener('load', function () {
                                       '&times' +
                                       '</button>';
 
-            let updateButton = '<button' +
-                                      ' id=' + '\"' + 'btn_id_' + turno.id + '\"' +
-                                      ' type="button" onclick="findBy('+turno.id+')" class="btn btn-info btn_id">' +
-                                      turno.id +
-                                      '</button>';
+            let updateButton = `
+                          <button id="btn_id_${turno.id}" type="button"  class="btn btn-info btn_id" disabled>
+                            ${turno.id}
+                          </button>
+                        `;
+            let updateActionButton = `
+                          <button id="btn_id_${turno.id}" type="button" onclick="findBy(${turno.id})" class="btn btn-info btn_id">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                              <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                              <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+                            </svg>
+                          </button>
+                        `;
 
             turnoRow.innerHTML = '<td>' + updateButton + '</td>' +
                     '<td class=\"td_paciente\">' + turno.paciente.nombre + " " + turno.paciente.apellido +
                     '</td>' +
                     '<td class=\"td_odontologo\">' + turno.odontologo.nombre + " " +  turno.odontologo.apellido + '</td>' +
                     '<td class=\"td_fecha\">' + turno.fecha + '</td>' +
-                    '<td>' + deleteButton + '</td>';
-
+                    '<td>' + deleteButton + '</td>' +
+                    '<td>' + updateActionButton + '<td>';
         };
 
     })

@@ -32,8 +32,8 @@ window.addEventListener('load', function () {
           fetch(url,settings)
           .then(response => response.json())
 
-    })
- })
+    });
+ });
 
 
     function findBy(id) {
@@ -53,7 +53,7 @@ window.addEventListener('load', function () {
               document.querySelector('#div_turno_updating').style.display = "block";
           }).catch(error => {
               alert("Error: " + error);
-          })
+          });
           }
 
     function deleteBy(id) {

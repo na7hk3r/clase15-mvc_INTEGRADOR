@@ -43,6 +43,17 @@ public class TurnoController {
         return ResponseEntity.ok(turnoService.buscarTodos());
     }
 
+    //Buscar por ID
+    @GetMapping("/{id}")
+    public ResponseEntity<Optional<Turno>> buscarPorId(@PathVariable Integer id) throws ResourceNotFoundException {
+        Optional<Turno> turno = turnoService.buscarPorId(id);
+        if (turno.isPresent()) {
+            return ResponseEntity.ok(turno);
+        } else {
+            throw new ResourceNotFoundException("Turno con ID: " + id + " no encontrado");
+        }
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<String> eliminarTurno(@PathVariable Integer id) throws ResourceNotFoundException {
         Optional<Turno> turnoBuscado = turnoService.buscarPorId(id);
